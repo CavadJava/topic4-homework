@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <header>
+    <header class="container-fluid">
         <div class="bank-company">
             <img src="" />
             <h1>MyBank</h1>
@@ -34,22 +34,23 @@
         <div class="account">
             <section class="account-header">
                 <h1>Account Dashboard</h1>
-                <p>Welcome back, John Doe</p>
+                <p class="form-control text-center">Welcome back, John Doe</p>
             </section>
             <section class="account-balance">
-                <label for ="current-balance">Current Balance: $1000</label>
+                <label class="form-control"  for ="current-balance">Current Balance: $1000</label>
                 <br/>
-                <input type="number" id="current-balance" placeholder="$5,000.50" min="100">
+                <input class="form-control"  type="number" id="current-balance" placeholder="$5,000.50" min="100">
             </section>
             <section class="account-operation">
-                <button class="btn-deposit">Deposit</button>
-                <button class="btn-withdraw">Withdraw</button>
+                <button class="btn btn-success btn-deposit">Deposit</button>
+                <button class="btn btn-danger btn-withdraw">Withdraw</button>
             </section>
             <section class="account-transaction">
-                <button class="btn-transaction">View Transaction History Open/Hidden</button>
+                <button class="btn btn-success btn-transaction">View Transaction History Open/Hidden</button>
                 <div class="transaction-history">
-                    <p>Transaction History</p>
-                    <table>
+                    <br/>
+                    <p class="form-control text-center">Transaction History</p>
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>Date</th>
