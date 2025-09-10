@@ -22,7 +22,7 @@ function isInsufficientBalance(balance=0) {
     }
 }
 
-function withDraw(){
+function withDrawOperation(){
     var inputAmount = document.querySelector("#current-balance").value;
     if(inputAmount<=0){
         return
@@ -41,7 +41,7 @@ function withDraw(){
     document.querySelector("tbody#transaction-history-rows").appendChild(createRow(type, inputAmount, "red"));
 }
 
-function deposit(){
+function depositOperation(){
     var inputAmount = document.querySelector("#current-balance").value;
     var balance = document.querySelector("span#span-current-balance").textContent;
     if(inputAmount==0){
@@ -69,7 +69,7 @@ function createRow(type, inputAmount=0, _style='green'){
     return row;
 }
 
-function clear(){
+function clearOperation(){
     data = [];
     document.querySelector("span#span-current-balance").textContent = 2000;
     document.querySelector("tbody#transaction-history-rows").innerHTML = "";
