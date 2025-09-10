@@ -11,13 +11,13 @@ function viewTransactionHistoryBtn () {
 
 function isInsufficientBalance(balance=0) {
     if(balance>9){
-        document.querySelector(".error-message").textContent = "";
+        document.querySelector(".error-message").textContent = "Good balance";
         document.querySelector('.btn-withdraw').disabled = false;
         return false;
     }else{
         document.querySelector(".error-message").textContent = "Insufficient balance";
         document.querySelector(".error-message").style.color = "red";
-        document.querySelector('.btn-withdraw').disabled = true;
+        document.querySelector('.btn-withdraw').disabled = false;
         return true;
     }
 }
@@ -71,6 +71,7 @@ function createRow(type, inputAmount=0, _style='green'){
 
 function clearOperation(){
     data = [];
+    document.querySelector("#current-balance").value = "";
     document.querySelector("span#span-current-balance").textContent = 2000;
     document.querySelector("tbody#transaction-history-rows").innerHTML = "";
     document.querySelector(".error-message").textContent = "";
