@@ -10,6 +10,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 
 </head>
 <body>
@@ -37,28 +38,30 @@
                 <p class="form-control text-center">Welcome back, John Doe</p>
             </section>
             <section class="account-balance">
-                <label class="form-control"  for ="current-balance">Current Balance: $1000</label>
+                <label for="current-balance">Current Balance: $<span id="span-current-balance" style="background-color: white; border: none;">2000</span></label>
                 <br/>
-                <input class="form-control"  type="number" id="current-balance" placeholder="$5,000.50" min="100">
+                <input class="form-control" type="number" id="current-balance" placeholder="$5,000.50" min="100">
             </section>
             <section class="account-operation">
-                <button class="btn btn-success btn-deposit">Deposit</button>
-                <button class="btn btn-danger btn-withdraw">Withdraw</button>
+                <button class="btn btn-success btn-deposit" onclick="btnDeposit()">Deposit</button>
+                <button class="btn btn-danger btn-withdraw" onclick="btnWithDraw()">Withdraw</button>
+                <button class="btn btn-danger btn-clear" onclick="btnClear()">Clear</button>
             </section>
             <section class="account-transaction">
-                <button class="btn btn-success btn-transaction">View Transaction History Open/Hidden</button>
+                <button class="btn btn-success btn-transaction" id="view-transaction-history-btn" onclick="viewTransactionHistoryBtn()">View Transaction History Open/Hidden</button>
                 <div class="transaction-history">
                     <br/>
-                    <p class="form-control text-center">Transaction History</p>
+                    <a class="form-control text-center" id="transaction-history-link" href="#">Transaction History</a>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Date</th>
                                 <th>Type</th>
-                                <th>Description</th>
                                 <th>Amount</th>
                             </tr>
                         </thead>
+                        <tbody id="transaction-history-rows">
+                        </tbody>
                     </table>
                 </div>
             </section>
