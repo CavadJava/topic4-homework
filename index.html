@@ -43,9 +43,10 @@
                 <input class="form-control" type="number" id="current-balance" placeholder="$5,000.50" min="100">
             </section>
             <section class="account-operation">
-                <button class="btn btn-success btn-deposit" onclick="btnDeposit()">Deposit</button>
-                <button class="btn btn-danger btn-withdraw" onclick="btnWithDraw()">Withdraw</button>
-                <button class="btn btn-danger btn-clear" onclick="btnClear()">Clear</button>
+                <button class="btn btn-success btn-deposit" onclick="deposit()">Deposit</button>
+                <button class="btn btn-danger btn-withdraw" onclick="withDraw()">Withdraw</button>
+                <button class="btn btn-danger btn-clear" onclick="clear()">Clear</button>
+                <p class="form-control text-center error-message"></p>
             </section>
             <section class="account-transaction">
                 <button class="btn btn-success btn-transaction" id="view-transaction-history-btn" onclick="viewTransactionHistoryBtn()">View Transaction History Open/Hidden</button>
