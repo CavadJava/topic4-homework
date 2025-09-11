@@ -96,11 +96,11 @@ function isInsufficientBalance(balance = 0,amount=0,type) {
 }
 
 function withDrawOperation() {
-    var amount = document.querySelector("#amount").value;
+    let amount = document.querySelector("#amount").value;
     if (amount <= 0) {
         return
     }
-    var balance = document.querySelector("span#current-balance").textContent;
+    let balance = document.querySelector("span#current-balance").textContent;
     if (balance <= 0) {
         return
     }
@@ -115,10 +115,11 @@ function withDrawOperation() {
 }
 
 function depositOperation() {
-    var amount = document.querySelector("#amount").value;
+    let amount = document.querySelector("#amount").value;
     if (amount <= 0) {
         return
     }
+    let balance = document.querySelector("span#current-balance").textContent;
     if (balance <= 0) {
         return
     }
