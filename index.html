@@ -38,21 +38,37 @@
                 <p class="form-control text-center">Welcome to MyBank</p>
             </section>
             <section class="account-balance">
-                <label for="current-balance">Current Balance: $<span id="span-current-balance" style="background-color: white; border: none;">2000</span></label>
+                <label for="amount">Current Balance: $<span id="current-balance" style="background-color: white; border: none;">2000</span></label>
                 <br/>
-                <input class="form-control" type="number" id="current-balance" placeholder="$5,000.50" min="100">
+                <input class="form-control" type="number" id="amount" placeholder="$5,000.50" min="100" >
             </section>
             <section class="account-operation">
-                <button class="btn btn-success btn-deposit" onclick="depositOperation()">Deposit</button>
-                <button class="btn btn-danger btn-withdraw" onclick="withDrawOperation()">Withdraw</button>
-                <button class="btn btn-danger btn-clear" onclick="clearOperation()">Clear</button>
-                <p class="form-control text-center error-message md-100"></p>
+                <div class="sub-operation">
+                    <button class="btn btn-success btn-deposit" onclick="depositOperation()">Deposit</button>
+                    <button class="btn btn-danger btn-withdraw" onclick="withDrawOperation()">Withdraw</button>
+                    <button class="btn btn-danger btn-reset" onclick="reset()">Reset</button>
+                    <p class="form-control text-center error-message md-100">---</p>
+                    <div class="account-history">
+                        <a class="form-control text-center text-decoration-none" id="current-transaction-link" href="#">Current Transaction</a>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody id="last-transaction">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
             <section class="account-transaction">
-                <button class="btn btn-success btn-transaction" id="view-transaction-history-btn" onclick="viewTransactionHistoryBtn()">View Transaction History Open/Hidden</button>
+                <button class="btn btn-success btn-transaction" id="view-transaction-history-btn"
+                        onclick="viewTransaction()">All Transaction History</button>
                 <div class="transaction-history">
                     <br/>
-                    <a class="form-control text-center" id="transaction-history-link" href="#">Transaction History</a>
                     <table class="table">
                         <thead>
                             <tr>
@@ -61,7 +77,7 @@
                                 <th>Amount</th>
                             </tr>
                         </thead>
-                        <tbody id="transaction-history-rows">
+                        <tbody id="transaction-table">
                         </tbody>
                     </table>
                 </div>
